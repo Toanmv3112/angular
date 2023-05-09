@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-12">
+    <div *ngIf="editState.error" class="alert alert-danger alert-dismissible">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-hidden="true"
+        >
+          ×
+        </button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        Cap nhat that bai
+      </div>
+
+      <div *ngIf="editState.success" class="alert alert-success alert-dismissible">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-hidden="true"
+        >
+          ×
+        </button>
+        <h5><i class="icon fas fa-check"></i> Alert!</h5>
+        Cap nhat thanh cong
+      </div>
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Edit Category</h3>
+      </div>
+      
+      <form (ngSubmit)="onSubmit()" [formGroup]="categoryEditForm">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputName"
+              placeholder="Enter Name"
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputSlug">Slug</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputSlug"
+              placeholder="Enter Slug"
+              formControlName="slug"
+            />
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
